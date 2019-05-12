@@ -10,7 +10,7 @@ if (!PORT) {
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use((req, res) => {
   res.status(404).send('not found');
