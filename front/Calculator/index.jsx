@@ -21,9 +21,21 @@ class Calculator extends Component {
       return;
     }
 
-    if (this.state.result && !isNumber(lastTyped)) {
+    if (this.state.result && isNumber(lastTyped)) {
       temp = lastTyped;
       this.setState({ inputsList: [], temp, result: '' });
+      return;
+    }
+
+    if (this.state.result && lastTyped === '.') {
+      temp = `0.`;
+      this.setState({ inputsList: [], temp, result: '' });
+      return;
+    }
+
+    if (this.state.result && lastTyped === '=') {
+      this.setState({ inputsList: [], temp: '' });
+      return;
     }
 
     if (temp.length === 0 && isNumber(lastTyped)) {
@@ -125,7 +137,6 @@ class Calculator extends Component {
             </button>
           );
         })}
-        <p>{this.state.temp}</p>
       </section>
     );
   }

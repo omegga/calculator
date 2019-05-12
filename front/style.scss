@@ -1,19 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
 body {
-  background-color: #111;
+  background-color: #111111;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
 }
 
 #calculator {
-  background-color: lightblue;
   margin: 0 auto;
+  margin-top: 100px;
   width: 360px;
 }
 
 #display {
+  border: 0px;
   display: block;
   height: 70px;
   margin: 0 auto;
-  width: 96%;
+  width: 100%;
 }
 
 .calculator-button {
@@ -21,6 +25,10 @@ body {
   border: 0px;
   color: lightblue;
   height: 70px;
-  margin: 1px;
-  width: 32%;
+  margin: 0.2%;
+  width: 24.4999%;
+}
+
+#equals {
+  width: 100%;
 }

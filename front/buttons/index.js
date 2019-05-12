@@ -40,6 +40,10 @@ export default [
     output: 9
   },
   {
+    name: 'clear',
+    output: 'AC'
+  },
+  {
     name: 'decimal',
     output: '.'
   },
@@ -62,9 +66,5 @@ export default [
   {
     name: 'equals',
     output: '='
-  },
-  {
-    name: 'clear',
-    output: 'AC'
   }
 ];
