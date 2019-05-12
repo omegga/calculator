@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
-  entry: './front/index.js',
+  entry: './front/index.jsx',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -13,11 +14,11 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.css/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       }
     ]
   },
@@ -25,6 +26,10 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'front/index.html')
+    }),
+    new StyleLintPlugin({
+      context: 'front',
+      files: '*.css'
     })
   ]
 };

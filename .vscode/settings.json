@@ -1,4 +1,4 @@
 {
-  "editor.formatOnSave": false,
-  "prettier.eslintIntegration": false
+  "files.autoSave": "off",
+  "eslint.autoFixOnSave": true
 }
