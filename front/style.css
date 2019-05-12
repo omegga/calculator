@@ -1,3 +1,26 @@
 body {
+  background-color: #111;
   text-align: center;
+}
+
+#calculator {
+  background-color: lightblue;
+  margin: 0 auto;
+  width: 360px;
+}
+
+#display {
+  display: block;
+  height: 70px;
+  margin: 0 auto;
+  width: 96%;
+}
+
+.calculator-button {
+  background-color: black;
+  border: 0px;
+  color: lightblue;
+  height: 70px;
+  margin: 1px;
+  width: 32%;
 }
