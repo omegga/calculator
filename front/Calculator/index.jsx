@@ -9,7 +9,8 @@ class Calculator extends Component {
     result: ''
   };
 
-  onButtonPress = lastTyped => {
+  onButtonPress = e => {
+    const { lastTyped } = e.target.dataset;
     let list = [...this.state.inputsList];
     let { temp } = this.state;
 
@@ -117,7 +118,8 @@ class Calculator extends Component {
               key={button.name}
               id={button.name}
               className="calculator-button"
-              onClick={() => this.onButtonPress(button.output.toString())}
+              data-last-typed={button.output}
+              onClick={this.onButtonPress}
             >
               {button.output}
             </button>
