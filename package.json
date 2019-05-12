@@ -59,6 +59,9 @@
     "url": "https://github.com/omegga/calculator/issues"
   },
   "homepage": "https://github.com/omegga/calculator#readme",
+  "browserslist": [
+    "defaults"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
