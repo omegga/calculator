@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { isNumber, isDecimal, isOperator, computeResult } from '../helpers';
-import buttons from '../buttons';
+import { isNumber, isDecimal, isOperator, computeResult } from '../utils';
+import buttons from '../utils/helpers';
+import keys from '../utils/keys';
 
 class Calculator extends Component {
   state = {
@@ -9,8 +10,11 @@ class Calculator extends Component {
     result: ''
   };
 
-  onButtonPress = e => {
-    const { lastTyped } = e.target.dataset;
+  componentDidMount() {
+    document.addEventListener('keypress', this.onKeyPress);
+  }
+
+  handleLastTyped = lastTyped => {
     let list = [...this.state.inputsList];
     let { temp } = this.state;
 
@@ -111,6 +115,17 @@ class Calculator extends Component {
     }
   };
 
+  onButtonClick = e => {
+    const { lastTyped } = e.target.dataset;
+    this.handleLastTyped(lastTyped);
+  };
+
+  onKeyPress = ({ keyCode }) => {
+    if (keys.hasOwnProperty(keyCode)) {
+      this.handleLastTyped(keys[keyCode]);
+    }
+  };
+
   render() {
     return (
       <section id="calculator">
@@ -131,7 +146,7 @@ class Calculator extends Component {
               id={button.name}
               className="calculator-button"
               data-last-typed={button.output}
-              onClick={this.onButtonPress}
+              onClick={this.onButtonClick}
             >
               {button.output}
             </button>
