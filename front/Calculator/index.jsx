@@ -136,7 +136,7 @@ class Calculator extends Component {
           value={
             this.state.result
               ? this.state.result
-              : this.state.inputsList.join('') + this.state.temp
+              : `${this.state.inputsList.join(' ')} ${this.state.temp}`
           }
         />
         {buttons.map(button => {

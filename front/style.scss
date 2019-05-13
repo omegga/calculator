@@ -2,7 +2,6 @@
 
 body {
   background-color: #111111;
-  font-family: 'Orbitron', sans-serif;
   text-align: center;
 }
 
@@ -13,10 +12,17 @@ body {
 }
 
 #display {
-  border: 0px;
+  background-color: black;
+  border-color: lightblue;
+  box-sizing: border-box;
+  color: lightblue;
   display: block;
+  font-family: 'Orbitron';
+  font-size: 1vw;
   height: 70px;
   margin: 0 auto;
+  padding: 10px;
+  text-align: right;
   width: 100%;
 }
 
@@ -24,6 +30,7 @@ body {
   background-color: black;
   border: 0px;
   color: lightblue;
+  font-family: 'Orbitron';
   height: 70px;
   margin: 0.2%;
   width: 24.4999%;
